@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="bookingPage.css">
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+        <script type="application/javascript" src="index.js"></script>
+
+        <title>Bookings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <h1>Bookings</h1>
+        <br>
+        Navn:
+        <input id="navn" type="text">
+        <br>
+        Antall gjester:
+        <input id="antGjester" type="number">
+        <br>
+        Booking time (dato og tidspunkt):
+        <input id="date" type="datetime-local">
+        <br>
+        Forrett:
+        <select id="forrett">
+            <option disabled selected value> --ønsker ikke-- </option>
+            <option>Suppe</option>
+            <option>Spekemat</option>
+            <option>Option 3</option>
+        </select>
+        <br>
+        Hovedrett:
+        <select id="hovedrett">
+            <option disabled selected value> --ønsker ikke-- </option>
+            <option>Pizza</option>
+            <option>Laks</option>
+            <option>Biff</option>
+        </select>
+        <br>
+        Dessert:
+        <select id="dessert">
+            <option disabled selected value> --ønsker ikke-- </option>
+            <option>Pannacotta</option>
+            <option>Sjokoladekake</option>
+            <option>Utvalg av smågodt</option>
+        </select>
+        <br>
+        Drikke:
+        <select id="drikke">
+            <option disabled selected value> --ønsker ikke-- </option>
+            <option>Fanta</option>
+            <option>Solo</option>
+        </select>
+        <br>
+        <button id="add">Book bord nå</button>
+    </body>
+</html>
