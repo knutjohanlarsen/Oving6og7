@@ -6,7 +6,7 @@ public class Bookings {
 
     private String bookingId;
     private Date bookingsTidspunkt;
-    private Date utlÃ¸psBookingsTidspunkt;
+    private Date utløpsBookingsTidspunkt;
     private String antallGjester;
     private String forrett;
     private String hovedrett;
@@ -37,12 +37,12 @@ public class Bookings {
         this.bookingsTidspunkt = bookingsTidspunkt;
     }
 
-    public Date getUtlÃ¸psBookingsTidspunkt() {
-        return utlÃ¸psBookingsTidspunkt;
+    public Date getUtløpsBookingsTidspunkt() {
+        return utløpsBookingsTidspunkt;
     }
 
-    public void setUtlÃ¸psBookingsTidspunkt(Date utlÃ¸psBookingsTidspunkt) {
-        this.utlÃ¸psBookingsTidspunkt = utlÃ¸psBookingsTidspunkt;
+    public void setUtløpsBookingsTidspunkt(Date utløpsBookingsTidspunkt) {
+        this.utløpsBookingsTidspunkt = utløpsBookingsTidspunkt;
     }
 
     public String getAntallGjester() {
@@ -119,7 +119,7 @@ public class Bookings {
                 ", dessert=" + dessert.toString() +
                 ", drikke=" + drikke.toString() +
                 ", kredittkort=" + kredittkort +
-                ", utlÃ¸psdato=" + utlopsdato +
+                ", utløpsdato=" + utlopsdato +
                 ", kontrollsiffer=" + kontrollsiffer +
                 '}';
     }

@@ -1,21 +1,26 @@
 function getText() {
-    $.get('rest/services/bookings/display', function (data) {
+    $.get('rest/services', function (data) {
         console.log(data);
         console.log(data.length);
         console.log(data[0]);
+        console.log(data[0].bookings)
+        console.log(data[0].bookings.length)
         console.log();
         var html = "";
-        for (var i = 0; i < data.length; i++) {
-            html += "<tr>";
-            html += "<td>" + data[i].bookingId + "</td>";
-            html += "<td>"
-            html += "<td>" + new Date(data[i].bookingsTidspunkt).toLocaleDateString() + "</td>";
-            html += "<td>" + new Date(data[i].bookingsTidspunkt).toLocaleTimeString() + "</td>";
-            html += "<td>" + data[i].forrett + "</td>";
-            html += "<td>" + data[i].hovedrett + "</td>";
-            html += "<td>" + data[i].dessert + "</td>";
-            html += "<td>" + data[i].drikke + "</td>";
-            html += "</tr>";
+        for (var bordId = 0; bordId < data.length; bordId++){
+            for (var bookingId = 0; bookingId < data[bordId].bookings.length; bookingId++) {
+                html += "<tr>";
+                html += "<td>" + data[bordId].bookings[bookingId].bookingId + "</td>";
+                html += "<td>" + data[bordId].bordId + "</td>";
+                html += "<td>" + new Date(data[bordId].bookings[bookingId].bookingsTidspunkt).toLocaleDateString() + "</td>";
+                html += "<td>" + new Date(data[bordId].bookings[bookingId].bookingsTidspunkt).toLocaleTimeString() + "</td>";
+                html += "<td>" + data[bordId].bookings[bookingId].forrett + "</td>";
+                html += "<td>" + data[bordId].bookings[bookingId].hovedrett + "</td>";
+                html += "<td>" + data[bordId].bookings[bookingId].dessert + "</td>";
+                html += "<td>" + data[bordId].bookings[bookingId].drikke + "</td>";
+                html += "</tr>";
+            }
+
         }
         $("#tabell").html(html);
     });

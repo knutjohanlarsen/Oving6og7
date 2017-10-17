@@ -29,7 +29,7 @@ public class BookingService {
         return -1;
     }
 
-    @GET
+ /*   @GET
     @Path("/bookings/display/test")
     @Produces(MediaType.APPLICATION_JSON)
     public Bord[] displayTest(){
@@ -48,7 +48,7 @@ public class BookingService {
             }
         }
         return bookings;
-    }
+    }*/
 
     @DELETE
     @Path("/{bordId}/{bookingId}")

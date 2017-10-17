@@ -42,14 +42,14 @@ public class Bord {
         else minutter = 90;
         LocalDateTime ldt = ldtTemp.plusMinutes(minutter);
         Date bookingExp = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
-        nyBooking.setUtlÃ¸psBookingsTidspunkt(bookingExp);
+        nyBooking.setUtløpsBookingsTidspunkt(bookingExp);
 
         if(bookings.isEmpty() && nyBooking.getBookingsTidspunkt() != null){
             this.bookings.add(nyBooking);
             return true;
         }
         for(Bookings bookings: bookings){
-            if(nyBooking.getBookingsTidspunkt().after(bookings.getBookingsTidspunkt()) && nyBooking.getBookingsTidspunkt().before(bookings.getUtlÃ¸psBookingsTidspunkt())){
+            if(nyBooking.getBookingsTidspunkt().after(bookings.getBookingsTidspunkt()) && nyBooking.getBookingsTidspunkt().before(bookings.getUtløpsBookingsTidspunkt())){
                 return false;
             } else if (nyBooking.getBookingsTidspunkt().equals(bookings.getBookingsTidspunkt())){
                 return false;
