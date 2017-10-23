@@ -3,11 +3,12 @@ package services;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Path("/services/")
 public class BookingService {
 
-    public static Bord[] bord = new Bord[3];
+    public static Bord[] bord = {new Bord("0"), new Bord("1"), new Bord("2")};
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -15,29 +16,36 @@ public class BookingService {
         return bord;
     }
 
-    @POST
+    /*@POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void populateBord() {
         for (int i = 0; i < bord.length; i++) bord[i] = new Bord(String.valueOf(i));
-    }
+    }*/
 
     @POST
-    @Path("/bookings")
     @Consumes(MediaType.APPLICATION_JSON)
     public int addBooking(Bookings booking) {
         for (Bord bord: bord) if(bord.addBooking(booking)) return 1;
         return -1;
     }
 
- /*   @GET
-    @Path("/bookings/display/test")
+    /*@GET
+    @Path("/{dateToCheck}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Bord[] displayTest(){
-        return bord;
-    }
+    public ArrayList<Date> displayTest(@PathParam("dateToCheck") String date){
+        ArrayList<Date> listeOverLedigeTidspunkt = new ArrayList<>();
+        for (Bord bord :bord) {
+            System.out.println(date);
+            ArrayList<Date> ledigeForBord = bord.checkAvailability(date);
+            for (Date ledig :ledigeForBord) {
+                listeOverLedigeTidspunkt.add(ledig);
+            }
+        }
+        return listeOverLedigeTidspunkt;
+    }*/
 
-    @GET
-    @Path("/bookings/display")
+    /*@GET
+    @Path("/bookings")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<services.Bookings> display(){
         ArrayList<services.Bookings> bookings = new ArrayList<>();

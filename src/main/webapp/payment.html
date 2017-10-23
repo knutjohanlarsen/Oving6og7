@@ -1,25 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Bookings</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="jquery-3.2.1.min.js"></script>
-    <script src="payment.js"></script>
-</head>
-<body>
-<h1>Payment</h1>
-<br>
-Kortnummer:
-<input id="kortnummer" type="number">
-<br>
-Kontrollsiffer:
-<input id="kontrollsiffer" type="number">
-<br>
-UtlÃ¸psdato:
-<input id="utlÃ¸psdato" type="date">
-<br>
-<button id="cancel">Kanseller</button>
-<button id="confirm">Aksepter</button>
-</body>
+    <head>
+        <title>Bookings</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Racing Sans One">
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="payment.js"></script>
+        <style>
+            body{
+                background: url("The-Avengers-Logo-Wallpapers.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+            #bg{
+                margin: auto;
+                max-width: 500px;
+                font-family: "Racing Sans One", sans-serif;
+            }
+            h1{
+                font-family: "Racing Sans One", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg" class="w3-card-4 w3-cyan w3-margin w3-padding-large w3-round w3-opacity-min">
+            <h1 class="w3-xxxlarge">Bestilling</h1>
+            <br>
+            <div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Navn:</label>
+                    <label id="navn" class="w3-twoquarter">Mordi</label>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Antall gjester:</label>
+                    <label id="antGjester" class="w3-twoquarter">Tets</label>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Tidspunkt:</label>
+                    <label id="date" class="w3-twoquarter"></label>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Forrett:</label>
+                    <label id="forrett" class="w3-twoquarter">jksdnnskdn</label>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Hovedrett:</label>
+                    <label id="hovedrett" class="w3-twoquarter">smdbgkbsdgns</label>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Dessert:</label>
+                    <label id="dessert" class="w3-twoquarter">sdbgksdngsd</label>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-quarter">Drikke:</label>
+                    <label id="drikke" class="w3-twoquarter">sdgksdgnsg</label>
+                </div>
+            </div>
+            <br>
+            <form class="w3-container" action="javascript:leggTilBestilling();">
+                <div class="w3-row">
+                    <label class="w3-half">Kortnummer:</label>
+                    <input id="kortnummer" class="w3-align-right" type="text" pattern="[0-9]{16}"required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Ugyldig kortnummer, 16 siffer nødvendig')">
+                </div>
+                <div class="w3-row">
+                    <label class="w3-half">Kontrollsiffer:</label>
+                    <input id="kontrollsiffer" class="w3-align-right" type="text" pattern="[0-9]{3}" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Ugyldig kontrollnummer, 3 siffer nødvendig ')" required>
+                </div>
+                <div class="w3-row">
+                    <label class="w3-half">Utløpsdato:</label>
+                    <input id="utlopsdato" class="w3-align-right" type="date">
+                </div>
+                <div class="w3-row">
+                    <button id="confirm">Bestill</button>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>

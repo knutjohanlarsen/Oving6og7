@@ -6,15 +6,15 @@ public class Bookings {
 
     private String bookingId;
     private Date bookingsTidspunkt;
-    private Date utløpsBookingsTidspunkt;
+    private Date utlopsBookingsTidspunkt;
     private String antallGjester;
     private String forrett;
     private String hovedrett;
     private String dessert;
     private String drikke;
-    private int kredittkort;
+    private String kredittkort;
     private Date utlopsdato;
-    private int kontrollsiffer;
+    private String kontrollsiffer;
 
 
     public Bookings(){
@@ -37,12 +37,12 @@ public class Bookings {
         this.bookingsTidspunkt = bookingsTidspunkt;
     }
 
-    public Date getUtløpsBookingsTidspunkt() {
-        return utløpsBookingsTidspunkt;
+    public Date getUtlopsBookingsTidspunkt() {
+        return utlopsBookingsTidspunkt;
     }
 
-    public void setUtløpsBookingsTidspunkt(Date utløpsBookingsTidspunkt) {
-        this.utløpsBookingsTidspunkt = utløpsBookingsTidspunkt;
+    public void setUtlopsBookingsTidspunkt(Date utlopsBookingsTidspunkt) {
+        this.utlopsBookingsTidspunkt = utlopsBookingsTidspunkt;
     }
 
     public String getAntallGjester() {
@@ -85,11 +85,11 @@ public class Bookings {
         this.drikke = drikke;
     }
 
-    public int getKredittkort() {
+    public String getKredittkort() {
         return kredittkort;
     }
 
-    public void setKredittkort(int kredittkort) {
+    public void setKredittkort(String kredittkort) {
         this.kredittkort = kredittkort;
     }
 
@@ -101,11 +101,11 @@ public class Bookings {
         this.utlopsdato = utlopsdato;
     }
 
-    public int getKontrollsiffer() {
+    public String getKontrollsiffer() {
         return kontrollsiffer;
     }
 
-    public void setKontrollsiffer(int kontrollsiffer) {
+    public void setKontrollsiffer(String kontrollsiffer) {
         this.kontrollsiffer = kontrollsiffer;
     }
 

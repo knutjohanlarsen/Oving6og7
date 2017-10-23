@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="bookingPage.css">
-        <script src="jquery-3.2.1.min.js"></script>
-        <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-        <script type="application/javascript" src="index.js"></script>
-
         <title>Bookings</title>
-        <meta charset="UTF-8">
+        <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Racing Sans One">
+        <script src="jquery-3.2.1.min.js"></script>
+        <script type="application/javascript" src="index.js"></script>
+        <style>
+            body{
+                background: url("The-Avengers-Logo-Wallpapers.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+            #bg{
+                margin: auto;
+                max-width: none;
+                font-family: "Racing Sans One", sans-serif;
+            }
+            h1{
+                font-family: "Racing Sans One", sans-serif;
+            }
+        </style>
     </head>
     <body>
-        <h1>Bookings</h1>
-        <br>
-        Navn:
-        <input id="navn" type="text">
-        <br>
-        Antall gjester:
-        <input id="antGjester" type="number">
-        <br>
-        Booking time (dato og tidspunkt):
-        <input id="date" type="datetime-local">
-        <br>
-        Forrett:
-        <select id="forrett">
-            <option disabled selected value> --√∏nsker ikke-- </option>
-            <option>Suppe</option>
-            <option>Spekemat</option>
-            <option>Option 3</option>
-        </select>
-        <br>
-        Hovedrett:
-        <select id="hovedrett">
-            <option disabled selected value> --√∏nsker ikke-- </option>
-            <option>Pizza</option>
-            <option>Laks</option>
-            <option>Biff</option>
-        </select>
-        <br>
-        Dessert:
-        <select id="dessert">
-            <option disabled selected value> --√∏nsker ikke-- </option>
-            <option>Pannacotta</option>
-            <option>Sjokoladekake</option>
-            <option>Utvalg av sm√•godt</option>
-        </select>
-        <br>
-        Drikke:
-        <select id="drikke">
-            <option disabled selected value> --√∏nsker ikke-- </option>
-            <option>Fanta</option>
-            <option>Solo</option>
-        </select>
-        <br>
-        <button id="add">Book bord n√•</button>
+        <div id="bg" class="w3-card-4 w3-cyan w3-margin w3-padding-large w3-round w3-opacity-min">
+            <h1 class="w3-xxxlarge w3-center">Avengers InstaFood Bestilling</h1>
+            <form class="w3-container" action="javascript:addBooking();">
+                <div>
+                    <label class="w3-xlarge">Navn:</label>
+                    <input id="navn" class="w3-input w3-border" type="text" style="max-width: 350px" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Et navn mÂ oppgis')">
+                </div>
+                <div>
+                    <label class="w3-xlarge">Antall gjester:</label>
+                    <input id="antGjester" class="w3-input w3-border" type="number" max="16" style="max-width: 100px" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Antall gjester mÂ oppgis')">
+                </div>
+                <br>
+                <div>
+                    <label class="w3-xlarge">Tidspunkt:</label>
+                    <input id="date" class="w3-input w3-border" type="datetime-local" step="1800" style="max-width: 300px" oninvalid="setTimeout(resetDateField, 2000)">
+                </div>
+                <br>
+                <fieldset style="border: none">
+                    <p class="w3-quarter">
+                        <label>Forrett:</label>
+                        <select id="forrett">
+                            <option value="">--ÿnsker Ikke--</option>
+                            <option>Suppe</option>
+                            <option>Spekemat</option>
+                            <option>Option 3</option>
+                        </select>
+                    </p>
+                    <p class="w3-quarter">
+                        <label>Hovedrett:</label>
+                        <select id="hovedrett">
+                            <option value="">--ÿnsker Ikke--</option>
+                            <option>Pizza</option>
+                            <option>Laks</option>
+                            <option>Biff</option>
+                        </select>
+                    </p>
+                    <p class="w3-quarter">
+                        <label>Dessert:</label>
+                        <select id="dessert">
+                            <option value="">--ÿnsker Ikke--</option>
+                            <option>Pannacotta</option>
+                            <option>Sjokoladekake</option>
+                            <option>Utvalg av smÂgodt</option>
+                        </select>
+                    </p>
+                    <p class="w3-quarter">
+                        <label>Drikke:</label>
+                        <select id="drikke">
+                            <option value="">--ÿnsker Ikke--</option>
+                            <option>Fanta</option>
+                            <option>Solo</option>
+                        </select>
+                    </p>
+                </fieldset>
+                <br>
+                <div class="w3-center">
+                    <button id="add">GÂ videre til betaling</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
