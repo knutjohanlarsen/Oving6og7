@@ -38,6 +38,12 @@ public class Bord {
 
     public ArrayList<Bookings> getBookingsByDate(String date){
         ArrayList<Bookings> bookingsByDate = new ArrayList<>();
+        Date checkDate = new Date(date);
+        for (Bookings booking : bookings) {
+            if(booking.getBookingsTidspunkt().getDate() == checkDate.getDate()){
+                bookingsByDate.add(booking);
+            }
+        }
         return bookingsByDate;
     }
     public boolean addBooking(Bookings nyBooking){
@@ -91,13 +97,13 @@ public class Bord {
     /*public ArrayList<Date> checkAvailability(String date) {
         ArrayList<Date> existingDates = new ArrayList<>();
         Date checkDate = new Date(date);
-        for (Bookings booking: bookings) {
-            if(checkDate.equals(booking.getBookingsTidspunkt())) break;
-            Date bookingFinishDate = new Date();
-            bookingFinishDate.setTime(bookingFinishDate.getTime() + getDurationOfBooking(booking));
-            if(checkDate.before(booking.getUtlopsBookingsTidspunkt()) && checkDate.after(booking.getBookingsTidspunkt())) continue;
+        Date bookingFinishDate = new Date();
+        bookingFinishDate.setTime(bookingFinishDate.getTime() + getDurationOfBooking(booking));
+        for (int bookingIndex = 0; bookingIndex < bookings.size(); bookingIndex++) {
 
-            existingDates.add(booking.getBookingsTidspunkt());
+//            if(checkDate.before(booking.getUtlopsBookingsTidspunkt()) && checkDate.after(booking.getBookingsTidspunkt())) continue;
+//
+//            existingDates.add(booking.getBookingsTidspunkt());
         }
         return existingDates;
     }

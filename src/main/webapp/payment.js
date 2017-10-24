@@ -33,6 +33,12 @@ $(document).ready(function() {
 
 });
 
+/*$("#cancel").onclick = function () {
+    alert("test");
+    localStorage.setItem("booking", booking);
+    window.open('index.html', '_self', false);
+};*/
+
 function leggTilBestilling() {
     booking['kredittkort'] = $("#kortnummer").val();
     booking['utlopsdato'] = new Date($("#utlopsdato").val()).toJSON();

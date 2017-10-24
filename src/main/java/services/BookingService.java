@@ -32,16 +32,13 @@ public class BookingService {
     /*@GET
     @Path("/{dateToCheck}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Date> displayTest(@PathParam("dateToCheck") String date){
-        ArrayList<Date> listeOverLedigeTidspunkt = new ArrayList<>();
+    public ArrayList<Bookings> displayTest(@PathParam("dateToCheck") String date){
+        ArrayList<Bookings> listeOverBookingsVedGittDato = new ArrayList<>();
         for (Bord bord :bord) {
             System.out.println(date);
-            ArrayList<Date> ledigeForBord = bord.checkAvailability(date);
-            for (Date ledig :ledigeForBord) {
-                listeOverLedigeTidspunkt.add(ledig);
-            }
+            listeOverBookingsVedGittDato.addAll(bord.getBookingsByDate(date));
         }
-        return listeOverLedigeTidspunkt;
+        return listeOverBookingsVedGittDato;
     }*/
 
     /*@GET

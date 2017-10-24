@@ -8,6 +8,11 @@ $(document).ready(function(){
     var rounded = new Date(Math.ceil(date.getTime() / coeff) * coeff - offset);
     document.getElementById("date").min = rounded.toISOString().slice(0,19);
     document.getElementById("date").defaultValue = rounded.toISOString().slice(0,19);
+    var lagretBooking = JSON.parse(localStorage.getItem("booking"));
+    console.log(lagretBooking);
+    if(lagretBooking != null) {
+        document.getElementById("navn").value = lagretBooking.bookingId;
+    }
     /*var elements = document.getElementsByTagName("SELECT");
     console.log(elements);
     for (var i = 0; i < elements.length; i++) {
@@ -76,5 +81,6 @@ function checkValidBookingInformation(){
         alert("Minst èn rett eller drikke må velges");
         return false;
     }
+    // checkAvailability();
     return true;
 }

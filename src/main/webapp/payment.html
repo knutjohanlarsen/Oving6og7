@@ -65,13 +65,14 @@
                 </div>
                 <div class="w3-row">
                     <label class="w3-half">Kontrollsiffer:</label>
-                    <input id="kontrollsiffer" class="w3-align-right" type="text" pattern="[0-9]{3}" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Ugyldig kontrollnummer, 3 siffer nødvendig ')" required>
+                    <input id="kontrollsiffer" class="w3-align-right" type="text" pattern="[0-9]{3}" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Ugyldig kontrollnummer, 3 siffer nødvendig ')">
                 </div>
                 <div class="w3-row">
                     <label class="w3-half">Utløpsdato:</label>
                     <input id="utlopsdato" class="w3-align-right" type="date">
                 </div>
                 <div class="w3-row">
+                    <!--<button id="cancel" type="button">Tilbake</button>-->
                     <button id="confirm">Bestill</button>
                 </div>
             </form>
